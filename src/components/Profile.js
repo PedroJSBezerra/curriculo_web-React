@@ -11,18 +11,13 @@ import imgprofile from '../images/profile.png'
 const Profile = () => {
     return (
         <Styled>
-            <img src={imgprofile} alt="Foto do Perfil"></img>
+            <img className="profileimg" src={imgprofile} alt="Foto do Perfil"></img>
             <h3>MEUS CONTATOS</h3>
             <ul>
                 <li>
                     <img src={phone} alt="" />
                     <div>
                         <a href="https://api.whatsapp.com/send?phone=+5585991249590">(85) 99124 9590</a>
-                    </div>
-                </li>
-                <li>
-                    <img src={phone} alt="ddd 85 991095608"/>
-                    <div>
                         <a href="https://api.whatsapp.com/send?phone=+5585991095608">(85) 99109 5608</a>
                     </div>
                 </li>
@@ -56,10 +51,12 @@ const Profile = () => {
 }
 
 const Styled = styled.div`
-    
+    font-size: 1.4rem;
     color: white;
     
-    padding: 2%;
+    width: 95vw;
+    margin-top: 2%;
+    padding: 4%;
     border-radius: 10px;
     background-color: #777;
 
@@ -67,33 +64,47 @@ const Styled = styled.div`
     flex-direction: column;
     align-items: center;
     
+    .profileimg{
+        width: 40%;
+    }
+    h3{
+        margin: 4% 0;
+        width: 100%;
+        text-align: center;
+    }
+
     ul {
         width: 100%;
 
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-between;
         
         li {
             width: 100%;
-            padding: 2%;
             list-style-type: none;
 
             display: flex;
-            flex-wrap: nowrap;
+            align-items: flex-start;
             img {
+                width: 2rem;
                 position: relative;
-                top: 2px;
-                margin: 0 2% 0 0;
+                margin: 2% 4% 0 0;
             }
             div {
+                width: 100%;
                 display: flex;
                 flex-direction: column;
-                
                 a {
+                    padding-left: 4%;
                     color: white;
                     text-decoration: none;
+                    word-break: break-word;
+                    line-height: 2.6rem;
+                    :hover{
+                        background: rgba(0,0,0,.2);
+                        border-radius: 10px;
+                    }
                 }
             }
         }
